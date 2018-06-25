@@ -3,11 +3,13 @@
 
 # Variables
 $rg1Name 	= 'rg-20533-mod01' # test resource group created in Exercise 2
-$rg2Name 	= 'rg-20533-mod102' # resource group name to which you will move the resource
+$rg2Name 	= 'rg-20533-mod0102' # resource group name to which you will move the resource
 $resName	= 'rt-20533-mod01' # test resource created in Exercise 2
 
 # Identify the location of the resource group containing the resource
 $locName = (Get-AzureRmResourceGroup -Name $rg1Name).Location
+
+echo "Current resource location: "$locName
 
 # Create a new resource group in the same location
 $rg2 = New-AzureRmResourceGroup -Name $rg2Name -Location $locName
